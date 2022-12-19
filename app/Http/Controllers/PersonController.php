@@ -13,7 +13,7 @@ class PersonController extends Controller
 {
     public function index()
     {
-        $persons = Person::select('id','name','description','type')->orderBy('created_at', 'DESC')->simplePaginate(2);
+        $persons = Person::select('id','name','description','type')->orderBy('created_at', 'DESC')->simplePaginate(10);
         return response()->json(['success'=>TRUE,'message'=>$persons],200);
     }
 
